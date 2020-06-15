@@ -1,0 +1,36 @@
+<html>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<head>
+		<title>Key code</title>
+		<link href="./main.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="master">
+			<h1 class="hero" id="value"></h1>
+			<p class="description" id="description">
+				Press any key to know it's Javascript event Key Code
+			</p>
+			<div class="card" style="display: none;">
+				<div class="container">
+					<h4>Key</h4>
+					<hr class="line" />
+					<p id="key"></p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		function showkey(e) {
+			// display key code on screen
+			document.querySelector("#value").innerHTML = e.keyCode;
+			// display grahic button on screen
+			if (e.key !== " ") document.querySelector("#key").innerHTML = e.key;
+			else document.querySelector("#key").innerHTML = e.code;
+			//hide pre data
+			document.querySelector("#description").style.display = "none";
+			document.querySelector(".card").style.display = "block";
+			document.querySelector(".card").style.left = "575px";
+		}
+		window.addEventListener("keydown", showkey);
+	</script>
+</html>
